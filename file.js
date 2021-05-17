@@ -1,12 +1,20 @@
 fetch("http://localhost:3000/api/cameras")
-.then(function(res){
-    if(res.ok){
-        return res.json();
-    }
-})
+.then(res => res.json())
 .then(function(value){
-    console.log(value);    
-})
-.catch(function(err){
-    //une erreur est survenue
+    displayProducts(value);    
 });
+
+const displayProducts = (products) => {
+    products.forEach(product => {
+        console.log(product);
+        document.querySelector(".col").innerHTML += "<p> "+ product.imageUrl + "</p>";
+        document.querySelector(".col").innerHTML += "<p> "+ product.name + "</p>";
+        document.querySelector(".col").innerHTML += "<p> "+ product.price + "</p>";
+        document.querySelector(".col").innerHTML += "<p> "+ product.description + "</p>";
+
+
+
+    });
+}
+
+
