@@ -3,3 +3,12 @@ header{
 nav{
     background-color: rgb(255,192,203);
 }
+a{
+    color: black;
+}
+
+footer{
+    background-color: rgb(255,192,203);
+    width: auto;
+    height: 4rem;
+}
