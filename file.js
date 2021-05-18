@@ -11,10 +11,9 @@ const displayProducts = (products) => {
         document.querySelector(".col").innerHTML += "<p> "+ product.name + "</p>";
         document.querySelector(".col").innerHTML += "<p> "+ product.price + "</p>";
         document.querySelector(".col").innerHTML += "<p> "+ product.description + "</p>";
-
-
-
+        
     });
 }
-
+// let img = document.createElement("img");
+// img.src = products.imageUrl;
 
