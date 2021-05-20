@@ -7,13 +7,7 @@ fetch("http://localhost:3000/api/cameras")
 const displayProducts = (products) => {
     products.forEach(product => {
         console.log(product);
-        document.querySelector(".col").innerHTML += "<img> "+ product.imageUrl + "</img>";
-        document.querySelector(".col").innerHTML += "<p> "+ product.name + "</p>";
-        document.querySelector(".col").innerHTML += "<p> "+ product.price + "</p>";
-        document.querySelector(".col").innerHTML += "<p> "+ product.description + "</p>";
-        
+        document.querySelector(".col").innerHTML += `<img width="250" src='  ${product.imageUrl}  '>` + `<p>  ${product.name}  </p>` + `<p>   ${product.price/100} euros  </p>` + `<p>  ${product.description}  </p>` ;
     });
 }
-// let img = document.createElement("img");
-// img.src = products.imageUrl;
 
