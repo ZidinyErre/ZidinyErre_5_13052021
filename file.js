@@ -12,5 +12,5 @@ const displayProducts = (products) => {
     });
 }
 
-let elt = document.querySelector(".card");
-elt.appendChild(displayProducts);
+// let elt = document.querySelector(".card");
+// elt.appendChild(displayProducts);
