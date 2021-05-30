@@ -10,7 +10,7 @@ const displayProducts = (products) => {
         document.querySelector(".row").innerHTML += `
         <div class="col-md-4 ">
             <div class="card align-self-start" style="width: 18rem;">
-                <a href= personnalisation.html><img width="100%" src='  ${product.imageUrl}  '></a>
+                <a><img width="100%" src='  ${product.imageUrl}  '></a>
                 <div class="card-body">
                     <p>  ${product.name}  </p>  <p>   ${product.price/100} euros  </p>  <p>  ${product.description}  </p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -19,6 +19,3 @@ const displayProducts = (products) => {
         </div>`
     });
 }
-
-// let elt = document.querySelector(".card");
-// elt.appendChild(displayProducts);
