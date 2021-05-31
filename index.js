@@ -7,17 +7,17 @@ fetch("http://localhost:3000/api/cameras")
 const displayProducts = (products) => {
     products.forEach(product => {
         console.log(product);
-        document.querySelector(".row").innerHTML += `
-        <div class="col-md-4 ">
+        document.querySelector(".row").innerHTML +=
+        `<div class="col-md-6 col-lg-6 ">
             <div class="card align-self-start" style="width: 18rem;">
-                <a><img width="100%" src='  ${product.imageUrl}  '></a>
+                <a class="photo"><img width="100%" src='  ${product.imageUrl}  '></a>
                 <div class="card-body">
                     <p>  ${product.name}  </p>  <p>   ${product.price/100} euros  </p>  <p>  ${product.description}  </p>
                 </div>
             </div>
         </div>`
+        const link = document.querySelector(".photo");
+        link.setAttribute("href", "personnalisation.html?id=" + product._id);
 
-        const link = document.querySelector(".row a");
-        link.setAttribute("href", "personnalisation.html?id" + product._id);
     });
 }
