@@ -10,14 +10,12 @@ const displayProducts = (products) => {
         document.querySelector(".row").innerHTML +=
         `<div class="col-md-6 col-lg-6 ">
             <div class="card align-self-start" style="width: 18rem;">
-                <a class="photo"><img width="100%" src='  ${product.imageUrl}  '></a>
+                <a href="personnalisation.html?id=${product._id}" class="photo"><img width="100%" src='  ${product.imageUrl}  '></a>
                 <div class="card-body">
                     <p>  ${product.name}  </p>  <p>   ${product.price/100} euros  </p>  <p>  ${product.description}  </p>
                 </div>
             </div>
         </div>`
-        const link = document.querySelector(".photo");
-        link.setAttribute("href", "personnalisation.html?id=" + product._id);
 
     });
 }
