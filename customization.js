@@ -17,8 +17,8 @@ const recover = (element) => {
     console.log(element);
     document.querySelector(".row").innerHTML +=
     `<div class="col d-flex justify-content-center">
-        <div class="card align-self-start" style="width: 18rem;">
-            <p>  ${element.name}  </p>  
+        <div class="card " style="width: 18rem;">
+            <p class="align-self-center">  ${element.name}  </p>  
             <img width="100%" src='  ${element.imageUrl}  '>
             <div class="card-body">
                 <p>   ${element.price/100} euros  </p>

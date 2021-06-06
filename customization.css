@@ -1,3 +1,11 @@
+header nav{
+    background-color: pink;
+    margin-bottom: 3rem;
+
+}
+.card{
+    margin-bottom: 2rem;
+}
 footer{
     background-color: rgb(255,192,203);
     width: auto;
