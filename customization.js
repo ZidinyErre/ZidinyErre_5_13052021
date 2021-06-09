@@ -1,13 +1,10 @@
-console.log(window.location);
 const url_string = window.location.href;
 const url = new URL(url_string);
-console.log(url);
 const id = url.searchParams.get("id");
 
 fetch("http://localhost:3000/api/cameras/" + id)
 .then(res => res.json())
 .then(function(value){
-    console.log(value);
     recover(value);
 });
 
@@ -25,6 +22,7 @@ const recover = (element) => {
                 <select class="drop">
                 </select>
                 <p>  ${element.description}  </p>
+                <button type="button" class="btn btn-primary ">Ajouter</button>
             </div>
         </div>
     </div>`
@@ -34,3 +32,4 @@ const recover = (element) => {
            document.querySelector(".drop").innerHTML += `<option>${y}</option>` 
     });
 }
+// localStorage.setItem()

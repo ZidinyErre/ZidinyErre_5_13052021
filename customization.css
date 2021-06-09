@@ -6,6 +6,9 @@ header nav{
 .card{
     margin-bottom: 2rem;
 }
+button{
+    margin-left: 5rem;
+}
 footer{
     background-color: rgb(255,192,203);
     width: auto;
