@@ -2,12 +2,12 @@ const url_string = window.location.href;
 const url = new URL(url_string);
 const id = url.searchParams.get("id");
 
+
 fetch("http://localhost:3000/api/cameras/" + id)
 .then(res => res.json())
 .then(function(value){
     recover(value);
 });
-
 
 
 const recover = (element) => {
@@ -26,10 +26,18 @@ const recover = (element) => {
             </div>
         </div>
     </div>`
-    const x = element.lenses;
-    x.forEach(function(y) 
-        { 
-           document.querySelector(".drop").innerHTML += `<option>${y}</option>` 
+
+    element.lenses.forEach(function(lense) { 
+        document.querySelector(".drop").innerHTML += `<option>${lense}</option>`
+           
+        localStorage.setItem("nom", `${element.name}` );
+        localStorage.setItem("prix" , `${element.price/100}` );
+        localStorage.setItem("lentilles" , `${element.lenses}` );
     });
+
+    document.querySelector("btn").addEventListener('click', function(cliquer){
+        console.log("click");
+        cliquer.preventDefault();
+    })
 }
-// localStorage.setItem()
+
