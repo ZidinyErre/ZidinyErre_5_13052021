@@ -29,15 +29,14 @@ const recover = (element) => {
 
     element.lenses.forEach(function(lense) { 
         document.querySelector(".drop").innerHTML += `<option>${lense}</option>`
-           
         localStorage.setItem("nom", `${element.name}` );
         localStorage.setItem("prix" , `${element.price/100}` );
         localStorage.setItem("lentilles" , `${element.lenses}` );
+        
     });
 
-    document.querySelector("btn").addEventListener('click', function(cliquer){
-        console.log("click");
-        cliquer.preventDefault();
-    })
+    // document.querySelector("btn").addEventListener('click', function(cliquer){
+        
+    // });
 }
 
