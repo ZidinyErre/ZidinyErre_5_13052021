@@ -22,17 +22,21 @@ const recover = (element) => {
                 <select class="drop">
                 </select>
                 <p>  ${element.description}  </p>
-                <button type="button" class="btn btn-primary ">Ajouter</button>
+                <button type="button" value="click" onclick="passValues();" class="btn btn-primary ">Ajouter</button>
             </div>
         </div>
     </div>`
 
     element.lenses.forEach(function(lense) { 
         document.querySelector(".drop").innerHTML += `<option>${lense}</option>`
-        localStorage.setItem("nom", `${element.name}` );
-        localStorage.setItem("prix" , `${element.price/100}` );
-        localStorage.setItem("lentilles" , `${element.lenses}` );
         
+        function passValues(){
+            document.getElementsByClassName("btn").value;   
+            localStorage.setItem("nom", `${element.name}` );
+            localStorage.setItem("prix" , `${element.price/100}` );
+            localStorage.setItem("lentilles" , `${element.lenses}` );
+            return false;
+        }
     });
 
     // document.querySelector("btn").addEventListener('click', function(cliquer){
