@@ -3,6 +3,7 @@ const url = new URL(url_string);
 const id = url.searchParams.get("id");
 
 
+
 fetch("http://localhost:3000/api/cameras/" + id)
 .then(res => res.json())
 .then(function(value){
@@ -22,7 +23,7 @@ const recover = (element) => {
                 <select class="drop">
                 </select>
                 <p>  ${element.description}  </p>
-                <button type="button" value="click" onclick="passValues();" class="btn btn-primary ">Ajouter</button>
+                <button type="button" class="btn btn-primary ">Ajouter</button>
             </div>
         </div>
     </div>`
@@ -30,17 +31,21 @@ const recover = (element) => {
     element.lenses.forEach(function(lense) { 
         document.querySelector(".drop").innerHTML += `<option>${lense}</option>`
         
-        function passValues(){
-            document.getElementsByClassName("btn").value;   
-            localStorage.setItem("nom", `${element.name}` );
-            localStorage.setItem("prix" , `${element.price/100}` );
-            localStorage.setItem("lentilles" , `${element.lenses}` );
-            return false;
-        }
     });
+    
+    
+    document.querySelector(".btn").addEventListener('click', function(cliquer){
+        const panier = JSON.parse(localStorage.getItem("panier"));
+        panier.push();
+        console.log(panier);
+        localStorage.setItem("panier", JSON.stringify([element._id]));
 
-    // document.querySelector("btn").addEventListener('click', function(cliquer){
-        
-    // });
+    });
 }
 
+// function passValues(){
+//     document.getElementsByClassName("btn").value;
+//     localStorage.setItem("nom", `${element.name}` );
+//     localStorage.setItem("prix" , `${element.price/100}` );
+//     return false;
+// }
