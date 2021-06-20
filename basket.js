@@ -1,1 +1,1 @@
-document.getElementsByClassName("data").innerHTML =localStorage.getItem("nom");
+document.getElementsByClassName("data").innerHTML =localStorage.getItem("panier");
