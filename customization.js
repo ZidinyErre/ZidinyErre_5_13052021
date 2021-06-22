@@ -34,7 +34,7 @@ const recover = (element) => {
     });
     
     
-    document.querySelector(".btn").addEventListener('click', function(cliquer){
+    document.querySelector(".btn").addEventListener('click', function(){
         const panier = JSON.parse(localStorage.getItem("panier"));
         panier.push();
         console.log(panier);
