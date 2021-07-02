@@ -35,10 +35,13 @@ const recover = (element) => {
     
     
     document.querySelector(".btn").addEventListener('click', function(){
-        const panier = JSON.parse(localStorage.getItem("panier"));
-        panier.push();
+        let panier = JSON.parse(localStorage.getItem("panier"));
+        if (panier == null) {
+            panier = [];
+        }
+        panier.push(element._id);
         console.log(panier);
-        localStorage.setItem("panier", JSON.stringify([element._id]));
+        localStorage.setItem("panier", JSON.stringify(panier));
 
     });
 }
