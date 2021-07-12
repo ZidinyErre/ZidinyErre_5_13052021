@@ -23,7 +23,7 @@ const recover = (element) => {
                 <select class="drop">
                 </select>
                 <p>  ${element.description}  </p>
-                <button type="button" class="btn btn-primary ">Ajouter</button>
+                <button type="button" class="btn btn-primary "> <a href="basket.html? ${element._id}">Ajouter</a> </button>
             </div>
         </div>
     </div>`
