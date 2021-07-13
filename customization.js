@@ -1,7 +1,7 @@
 const url_string = window.location.href;
 const url = new URL(url_string);
 const id = url.searchParams.get("id");
-
+console.log(url);
 
 
 fetch("http://localhost:3000/api/cameras/" + id)
@@ -12,7 +12,7 @@ fetch("http://localhost:3000/api/cameras/" + id)
 
 
 const recover = (element) => {
-    console.log(element);
+    // console.log(element);
     document.querySelector(".row").innerHTML +=
     `<div class="col d-flex justify-content-center">
         <div class="card " style="width: 18rem;">
@@ -23,7 +23,7 @@ const recover = (element) => {
                 <select class="drop">
                 </select>
                 <p>  ${element.description}  </p>
-                <button type="button" class="btn btn-primary "> <a href="basket.html? ${element._id}">Ajouter</a> </button>
+                <button type="button" class="btn btn-primary "> <a href="basket.html?${element._id}">Ajouter</a> </button>
             </div>
         </div>
     </div>`
@@ -40,7 +40,7 @@ const recover = (element) => {
             panier = [];
         }
         panier.push(element._id);
-        console.log(panier);
+        // console.log(panier);
         localStorage.setItem("panier", JSON.stringify(panier));
 
     });
