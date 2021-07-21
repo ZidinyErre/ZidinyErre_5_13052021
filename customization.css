@@ -6,12 +6,15 @@ header nav{
 .card{
     margin-bottom: 2rem;
 }
-a{
+.btn a{
     color: white;
     text-decoration: none;
 }
 a:hover{
     color: orange;
+}
+.bi-currency-euro{
+    color: blue;
 }
 button{
     margin-left: 5rem;
