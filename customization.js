@@ -30,12 +30,16 @@ const recover = (element) => {
             </div>
         </div>
     </div>`
-    document.querySelector(".drop").innerHTML += `<option>Lentille</option>`
+
+    
+    document.querySelector(".drop").innerHTML += `<option value="0" >Lentille</option>`
     element.lenses.forEach(function(lense) { 
-        document.querySelector(".drop").innerHTML += `<option>${lense}</option>`
+        document.querySelector(".drop").innerHTML += `<option value="1">${lense}</option>`
         
     });
     
+    
+
     
     document.querySelector(".btn").addEventListener('click', function(){
         let panier = JSON.parse(localStorage.getItem("panier"));

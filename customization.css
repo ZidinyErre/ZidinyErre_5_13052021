@@ -9,8 +9,9 @@ header nav{
 .btn a{
     color: white;
     text-decoration: none;
+    margin:auto;
 }
-a:hover{
+.btn a:hover{
     color: orange;
 }
 .bi-currency-euro{
