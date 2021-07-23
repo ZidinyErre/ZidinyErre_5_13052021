@@ -37,7 +37,7 @@ const recover = (element) => {
         document.querySelector(".drop").innerHTML += `<option value="1">${lense}</option>`
         
     });
-    
+    console.log();
     
 
     
@@ -47,7 +47,8 @@ const recover = (element) => {
             panier = [];
         }
         panier.push(element._id);
-        // console.log(panier);
+        // const btnSend = document.querySelector("btn-primary");
+        // console.log(btnSend);
         localStorage.setItem("panier", JSON.stringify(panier));
 
     });
