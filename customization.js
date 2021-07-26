@@ -38,24 +38,20 @@ const recover = (element) => {
         document.querySelector(".drop").innerHTML += `<option value="1">${lense}</option>`
     });
     // J'ai fait une constante qui vise le contrôleur d'options 
-    const selectLense = document.querySelector(".drop");
+    const selectLense = document.querySelector(".drop").value;
     console.log(selectLense); 
     // J'ai fait une constante qui vise la valeur du controleur d'options
-    const choixlense = selectLense.value;
-    console.log(choixlense); 
+    // const choixlense = selectLense.value;
+    // console.log(choixlense); 
     
     let camera = {
         id: id,
-        lentille: choixlense,
+        lentille: selectLense,
     };
 
-    document.querySelector(".btn").addEventListener('click', function(){
+    document.querySelector(".btn").addEventListener("click", function(){
         console.log(camera);
     });
-
-    // selectLense.addEventListener('click',function (){
-        
-    // });
 
     
     
