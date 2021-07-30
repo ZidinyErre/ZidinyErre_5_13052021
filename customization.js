@@ -44,7 +44,7 @@ const recover = (element) => {
     });
     // J'ai fait une constante qui vise le contrôleur d'options 
     // const selectLense = document.querySelector(".drop").value;
-
+// Je vériefie juste mon token
 
     document.querySelector(".btn").addEventListener("click", function(){
         
