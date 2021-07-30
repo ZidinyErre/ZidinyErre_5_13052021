@@ -1,8 +1,6 @@
 const url_string = window.location.href;
 const url = new URL(url_string);
 const id = url.searchParams.get("id");
-console.log(url);
-console.log(url_string);
 
 
 fetch("http://localhost:3000/api/cameras/" + id)
@@ -13,7 +11,7 @@ fetch("http://localhost:3000/api/cameras/" + id)
 
 
 const recover = (element) => {
-    // console.log(element);
+    console.log(element);
     document.querySelector(".row").innerHTML +=
     `<div class="col d-flex justify-content-center">
         <div class="card " style="width: 18rem;">
@@ -30,7 +28,8 @@ const recover = (element) => {
             </div>
         </div>
     </div>`
-    
+    console.log(".drop");
+
     let select = document.querySelector(".drop");
     let firstOption = document.createElement("option");
     firstOption.setAttribute('disabled', "disabled");
@@ -39,12 +38,17 @@ const recover = (element) => {
     firstOption.textContent = "Choisissez la focale";
     select.appendChild(firstOption);
 
-    element.lenses.forEach(function(lense) { 
-        document.querySelector(".drop").innerHTML += `<option value="1">${lense}</option>`
-    });
-    // J'ai fait une constante qui vise le contrôleur d'options 
-    // const selectLense = document.querySelector(".drop").value;
-// Je vériefie juste mon token
+    for( i = 0; i<element.lenses.length; i++){
+        let optionLenses = document.createElement("option");
+        select.appendChild(optionLenses);
+        select.classList.add("choix");
+        optionLenses.setAttribute('value', "1");
+        optionLenses.textContent = element.lenses[i];
+    }
+    // element.lenses.forEach(function(lense) { 
+    //     document.querySelector(".drop").innerHTML += `<option value="1">${lense}</option>`
+    // });
+    
 
     document.querySelector(".btn").addEventListener("click", function(){
         
