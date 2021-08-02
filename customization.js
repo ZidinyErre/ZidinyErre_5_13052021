@@ -77,7 +77,22 @@ const recover = (element) => {
     
 
     document.querySelector(".btn").addEventListener("click", function(){
-        
+        let select = document.querySelector(".drop");
+        let choixFocales = select.selectedIndex;
+        if (choixFocales == 0) {
+            alert("N'oubliez pas votre lentille :)") 
+        }
+        else {
+            let lePanier = {
+                id : element._id,
+                img : element.imageUrl,
+                quantity : result
+            }
+            let panier = JSON.stringify(lePanier);
+            localStorage.setItem("basket", panier);
+            alert(message = "Merci");
+        }
+        element.preventDefault();
     });
 
     
