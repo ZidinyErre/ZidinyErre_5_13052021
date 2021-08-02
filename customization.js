@@ -85,6 +85,8 @@ const recover = (element) => {
         else {
             let lePanier = {
                 id : element._id,
+                name : element.name,
+                prix : element.price,
                 img : element.imageUrl,
                 quantity : result
             }
@@ -92,7 +94,7 @@ const recover = (element) => {
             localStorage.setItem("basket", panier);
             alert(message = "Merci");
         }
-        element.preventDefault();
+        
     });
 
     
