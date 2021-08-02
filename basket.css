@@ -3,7 +3,9 @@ header nav{
     margin-bottom: 3rem;
 
 }
-
+.photo{
+    width: 10rem;
+}
 footer{
     background-color: rgb(255,192,203);
     width: auto;
