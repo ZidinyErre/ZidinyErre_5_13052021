@@ -44,9 +44,7 @@ const recover = (element) => {
         optionLenses.setAttribute('value', "1");
         optionLenses.textContent = element.lenses[i];
     }
-    // element.lenses.forEach(function(lense) { 
-    //     document.querySelector(".drop").innerHTML += `<option value="1">${lense}</option>`
-    // });
+    
 
     // Création des boutons - et +
     let paragraphe = document.querySelector(".text");
@@ -72,8 +70,9 @@ const recover = (element) => {
             result--;
             // document.getElementById('resultat').value = result;
         }
+        console.log(result);
+
     });
-    console.log(res);
     
 
     document.querySelector(".btn").addEventListener("click", function(){
