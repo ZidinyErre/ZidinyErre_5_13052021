@@ -17,6 +17,9 @@ header nav{
 .bi-currency-euro{
     color: blue;
 }
+.montant{
+    color: rgb(12, 12, 197);
+}
 button{
     margin-left: 5rem;
 }
