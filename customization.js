@@ -63,49 +63,50 @@ const recover = (element) => {
         optionLenses.textContent = element.lenses[i];
     }
 
-    let initialisation = document.querySelector(".form-control").value = 1 ;
+    // Ici on crée les variables qui vise l'input et les deux boutons et on crée une variable avec la fonction parsInt pour rendre que des nombres décimales
+    let init = document.querySelector(".form-control").value = 1 ;
+    let initialisation = parseInt(init, 10);
     let moins = document.getElementsByClassName('moins') ;
     let plus = document.getElementsByClassName('plus') ;
-    
-    
-    // let result = document.querySelector("#resultat")
-    //  res = result.value;
-    moins.addEventListener('click', function(){
-        if (result > 1 && result <= 20 ) {
-            result--;
-            // document.getElementById('resultat').value = result;
-        }
+// La on crée une condition sur chaque bouton plus et moins.J'ai mis un [] car sinon le boutons renvoyé null.   
+    moins[0].addEventListener('click', function(){
+        if (initialisation > 1 && initialisation <= 20 ) {
+            initialisation--;
+            document.querySelector(".form-control").value = initialisation;
+       }
 
     });
-
-    plus.addEventListener('click', function(){
-        if (result >= 1 && result < 20 ) {
-            result++;
-            // document.getElementById('resultat').value = result;
+    plus[0].addEventListener('click', function(){
+        if (initialisation >= 1 && initialisation < 20 ) {
+            initialisation++;
+            document.querySelector(".form-control").value = initialisation;
         }
     });
-    
+//Dans les deux conditions if précèdentes on rajoute à la variable initialisation les valeurs de l'input
 
-    document.querySelector(".btn").addEventListener("click", function(){
-        let select = document.querySelector(".drop");
-        let choixFocales = select.selectedIndex;
-        if (choixFocales == 0) {
-            alert("N'oubliez pas votre lentille :)") 
-        }
-        else {
-            let lePanier = {
-                id : element._id,
-                name : element.name,
-                prix : element.price,
-                img : element.imageUrl,
-                quantity : result
-            }
-            let panier = JSON.stringify(lePanier);
-            localStorage.setItem("basket", panier);
-            alert(message = "Merci");
-        }
+
+
+
+    // document.querySelector(".btn").addEventListener("click", function(){
+    //     let select = document.querySelector(".drop");
+    //     let choixFocales = select.selectedIndex;
+    //     if (choixFocales == 0) {
+    //         alert("N'oubliez pas votre lentille :)") 
+    //     }
+    //     else {
+    //         let lePanier = {
+    //             id : element._id,
+    //             name : element.name,
+    //             prix : element.price,
+    //             img : element.imageUrl,
+    //             quantity : result
+    //         }
+    //         let panier = JSON.stringify(lePanier);
+    //         localStorage.setItem("basket", panier);
+    //         alert(message = "Merci");
+    //     }
         
-    });
+    // });
 
     
     
