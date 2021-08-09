@@ -87,26 +87,27 @@ const recover = (element) => {
 
 
 
-    // document.querySelector(".btn").addEventListener("click", function(){
-    //     let select = document.querySelector(".drop");
-    //     let choixFocales = select.selectedIndex;
-    //     if (choixFocales == 0) {
-    //         alert("N'oubliez pas votre lentille :)") 
-    //     }
-    //     else {
-    //         let lePanier = {
-    //             id : element._id,
-    //             name : element.name,
-    //             prix : element.price,
-    //             img : element.imageUrl,
-    //             quantity : result
-    //         }
-    //         let panier = JSON.stringify(lePanier);
-    //         localStorage.setItem("basket", panier);
-    //         alert(message = "Merci");
-    //     }
+    document.querySelector(".btn-validation").addEventListener("click", function(){
+        let select = document.querySelector(".drop");
+        let choixFocales = select.selectedIndex;
+        console.log(choixFocales);
+        if (choixFocales == 0) {
+            alert("N'oubliez pas votre lentille :)") 
+        }
+        else {
+            let lePanier = {
+                id : element._id,
+                name : element.name,
+                prix : element.price,
+                img : element.imageUrl,
+                quantity : initialisation
+            }
+            let panier = JSON.stringify(lePanier);
+            localStorage.setItem("basket", panier);
+            alert(message = "Merci");
+        }
         
-    // });
+    });
 
     
     
