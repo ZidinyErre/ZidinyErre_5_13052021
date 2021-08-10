@@ -36,7 +36,7 @@ const recover = (element) => {
 
     // Création et mise en place du select
     let select = document.createElement("select");
-    select.classList.add(".drop");
+    select.classList.add("drop");
     card.append(select);
 
     // Création et mise en place du texte
@@ -94,18 +94,23 @@ const recover = (element) => {
         if (choixFocales == 0) {
             alert("N'oubliez pas votre lentille :)") 
         }
-        else {
-            let lePanier = {
-                id : element._id,
-                name : element.name,
-                prix : element.price,
-                img : element.imageUrl,
-                quantity : initialisation
-            }
-            let panier = JSON.stringify(lePanier);
-            localStorage.setItem("basket", panier);
-            alert(message = "Merci");
+        else if (confirm("ok bro")) {
+            window.location.href = "basket.html";
+        }else{
+            window.location.href = "index.html";
         }
+        // // else {
+        // //     let lePanier = {
+        // //         id : element._id,
+        // //         name : element.name,
+        // //         prix : element.price,
+        // //         img : element.imageUrl,
+        // //         quantity : initialisation
+        // //     }
+        //     let panier = JSON.stringify(lePanier);
+        //     localStorage.setItem("basket", panier);
+        //     alert(message = "Merci");
+        // }
         
     });
 
