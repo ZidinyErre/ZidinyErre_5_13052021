@@ -23,8 +23,16 @@ header nav{
 button{
     margin-left: 5rem;
 }
-
-
+.btn-validation{
+    margin: 1rem;
+}
+.montant{
+    margin: 0.5rem;
+}
+.count{
+    margin : auto;
+    margin-bottom: 0.5rem;
+}
 footer{
     background-color: rgb(255,192,203);
     width: auto;
