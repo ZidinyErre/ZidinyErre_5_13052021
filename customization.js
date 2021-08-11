@@ -12,7 +12,7 @@ fetch("http://localhost:3000/api/cameras/" + id)
 const recover = (element) => {
     console.log(element);
     // carte Bootstrap
-    let card = document.querySelector(".card");
+    // let card = document.querySelector(".card");
     let focale = document.querySelector(".focale");
 
     // Création et mise en place du nom du produit
@@ -87,22 +87,23 @@ const recover = (element) => {
         if (choixFocales == 0) {
             alert("N'oubliez pas votre lentille :)") 
         }
-        else if (confirm("ok bro")) {
+        else if (confirm("Avez-vous fait votre choix ? ")) {
             window.location.href = "basket.html";
+            let lePanier = {
+                    id : element._id,
+                    name : element.name,
+                    prix : element.price,
+                    img : element.imageUrl,
+                    quantity : initialisation
+                    }
+                let panier = JSON.stringify(lePanier);
+                localStorage.setItem("basket", panier);
+                alert(message = "Merci");
         }else{
             window.location.href = "index.html";
         }
         // // else {
-        // //     let lePanier = {
-        // //         id : element._id,
-        // //         name : element.name,
-        // //         prix : element.price,
-        // //         img : element.imageUrl,
-        // //         quantity : initialisation
-        // //     }
-        //     let panier = JSON.stringify(lePanier);
-        //     localStorage.setItem("basket", panier);
-        //     alert(message = "Merci");
+        // //     
         // }
         
     });
