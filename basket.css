@@ -6,6 +6,30 @@ header nav{
 .photo{
     width: 10rem;
 }
+.data{
+    background-color: crimson;
+    border-radius:10%;
+
+}
+form{
+    background-color: coral;
+    border-radius: 5%;
+}
+.formulaire{
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+.formulairebas{
+    margin-left: 2rem;
+    margin-bottom: 4rem;
+
+}
+.btn-dark{
+    margin: auto;
+    margin-left: 38rem;
+    margin-top: -4rem;
+}
+
 footer{
     background-color: rgb(255,192,203);
     width: auto;
