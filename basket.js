@@ -28,3 +28,40 @@ for (let i = 0; i < notrePanierJSON.length; i++) {
     divDeBase.appendChild(numberOf);
 
 }
+
+// FORMULAIRE
+// class contact {
+//     constructor(firstName, lastName, address, city , email){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.address = address;
+//         this.city = city;
+//         this.email = email;
+//     }
+// }
+const contact = {
+    firstName : document.querySelector(".nom").value,
+    lastName : document.querySelector(".prénom").value,
+    address: document.querySelector(".adresse").value,
+    city : document.querySelector(".ville").value,
+    email : document.querySelector(".mail").value
+}
+
+function nom() {
+    let name = contact.firstName;
+    let nameRegex = /^[A-Za-z]{3,20}$/ ;
+    let nameResult = nameRegex.test(name);
+
+    let envoie = document.querySelector(".btn-dark");
+    envoie.addEventListener("click", function(){
+        if (nameResult == true) {
+            alert("let'sgo");
+        }
+        else{
+            alert("nope");
+        }
+    });
+}
+
+console.log(envoie);
+
