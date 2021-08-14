@@ -39,29 +39,29 @@ for (let i = 0; i < notrePanierJSON.length; i++) {
 //         this.email = email;
 //     }
 // }
-const contact = {
-    firstName : document.querySelector(".nom").value,
-    lastName : document.querySelector(".prénom").value,
-    address: document.querySelector(".adresse").value,
-    city : document.querySelector(".ville").value,
-    email : document.querySelector(".mail").value
-}
+// const contact = {
+//     firstName : document.querySelector(".nom").value,
+//     lastName : document.querySelector(".prénom").value,
+//     address: document.querySelector(".adresse").value,
+//     city : document.querySelector(".ville").value,
+//     email : document.querySelector(".mail").value
+// }
 
-function nom() {
-    let name = contact.firstName;
-    let nameRegex = /^[A-Za-z]{3,20}$/ ;
-    let nameResult = nameRegex.test(name);
+    
 
-    let envoie = document.querySelector(".btn-dark");
-    envoie.addEventListener("click", function(){
-        if (nameResult == true) {
-            alert("let'sgo");
-        }
-        else{
-            alert("nope");
-        }
-    });
-}
+let envoie = document.querySelector(".valid");
+envoie.addEventListener('click', function(){
+    
+let firstName = document.querySelector(".nom").value;
+let nameRegex = /^[A-Za-z]{3,20}$/;
+    if(nameRegex.test(firstName)){        
+        console.log("ok");
+    } else{
+        console.log("ko");
+    }
 
-console.log(envoie);
+});
+
+
+
 
