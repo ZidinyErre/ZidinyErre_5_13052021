@@ -89,23 +89,20 @@ const recover = (element) => {
         }
         else if (confirm("Avez-vous fait votre choix ? ")) {
             window.location.href = "basket.html";
+
             let lePanier = {
                     id : element._id,
                     name : element.name,
                     prix : element.price,
                     img : element.imageUrl,
                     quantity : initialisation
-                    }
-                let panier = JSON.stringify(lePanier);
-                localStorage.setItem("basket", panier);
-                alert(message = "Merci");
+                }
+            let panier = JSON.stringify(lePanier);
+            localStorage.setItem("basket", panier);
+
         }else{
             window.location.href = "index.html";
         }
-        // // else {
-        // //     
-        // }
-        
     });
 
     
