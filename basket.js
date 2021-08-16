@@ -23,6 +23,11 @@ for (let i = 0; i < notrePanierJSON.length; i++) {
         localStorage.removeItem("basket");
     })
 
+    let totalPanier = "" ;
+    const divTotal = document.querySelector(".total");
+    calculPanier = totalPanier + (appareil.prix/100 * appareil.quantity +".00"+ " €");
+    divTotal.innerHTML = `Le prix total est de ${calculPanier}`;
+
 }
 
 // FORMULAIRE
