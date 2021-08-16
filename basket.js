@@ -61,6 +61,38 @@ let nameRegex = /^[A-Za-z]{3,20}$/;
         console.log("ko");
     }
 
+let  lastName = document.querySelector(".prénom").value;
+    if(nameRegex.test(lastName)){        
+        console.log("yep");
+    } else{
+        console.log("nop");
+    }
+
+
+let  city = document.querySelector(".ville").value;
+    if(nameRegex.test(city)){        
+        console.log("yes");
+    } else{
+        console.log("no");
+    }
+
+let  email = document.querySelector(".mail").value;
+let  emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+if(emailRegex.test(email)){        
+    console.log("ope");
+}else{
+    console.log("nope");
+}
+
+let addressRegex = /^[a-zA-Zà-żÀ-Ż-0-9+\s+-]+$/;
+let address = document.querySelector(".adresse").value;
+if(addressRegex.test(address)){        
+    console.log("ça marche ");
+}else{
+    console.log("nonn");
+}
+
+
 });
 
 
