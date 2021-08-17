@@ -88,17 +88,24 @@ const recover = (element) => {
             alert("N'oubliez pas votre lentille :)") 
         }
         else if (confirm("Avez-vous fait votre choix ? ")) {
+            
+            let old_basket = [];
+            if ( !(typeof localStorage.getItem("basket") == 'string' && !localStorage.getItem("basket").trim() || typeof localStorage.getItem("basket") == 'undefined' || localStorage.getItem("basket") === null)) {
+                old_basket = JSON.parse(localStorage.getItem("basket"));
+            }
+            let lePanier = {
+                id : element._id,
+                name : element.name,
+                prix : element.price,
+                lentille : choixFocales.label,
+                img : element.imageUrl,
+                quantity : initialisation
+            }
+            old_basket.push(lePanier);
+            localStorage.setItem("basket", JSON.stringify(old_basket));
+
             window.location.href = "basket.html";
 
-            let lePanier = {
-                    id : element._id,
-                    name : element.name,
-                    prix : element.price,
-                    img : element.imageUrl,
-                    quantity : initialisation
-                }
-            let panier = JSON.stringify(lePanier);
-            localStorage.setItem("basket", panier);
 
         }else{
             window.location.href = "index.html";

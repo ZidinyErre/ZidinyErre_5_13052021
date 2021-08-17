@@ -1,3 +1,10 @@
+let basket = [];
+if ( !(typeof localStorage.getItem("basket") == 'string' && !localStorage.getItem("basket").trim() || typeof localStorage.getItem("basket") == 'undefined' || localStorage.getItem("basket") === null)) {
+    basket = JSON.parse(localStorage.getItem("basket"));
+}
+for (let i = 0; i < basket.length; i++) {
+    
+}
 
 let notrePanierJSON = Object.keys(localStorage);
 console.log(notrePanierJSON);
