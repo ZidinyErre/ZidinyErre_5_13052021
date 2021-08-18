@@ -6,11 +6,7 @@ header nav{
 .img{
     width: 5rem;
 }
-.data{
-    background-color: crimson;
-    border-radius:10%;
 
-}
 form{
     background-color: coral;
     border-radius: 5%;
@@ -23,11 +19,6 @@ form{
     margin-left: 2rem;
     margin-bottom: 4rem;
 
-}
-.btn-dark{
-    margin: auto;
-    margin-left: 38rem;
-    margin-top: -4rem;
 }
 
 footer{
