@@ -12,20 +12,38 @@ for (let i = 0; i < basket.length; i++) {
         <td>${basket[i].name}</td>
         <td>${basket[i].prix/100+".00"+"€"}</td>
         <td>${basket[i].quantity}</td>
-        <td class="totalpanier"></td>
     </tr>
 
     `
-    // let totalPanier = "" ;
-    const divTotal = document.querySelector(".totalpanier");
-    let calculPanier = (basket[i].prix/100 * basket[i].quantity +".00"+ " €" );
-    divTotal.innerHTML = calculPanier;
+    
+}
+
+ let totalPrixPanier = [] ;
+ for (let j = 0; j < basket.length; j++) {
+    let prixPanier = basket[j].prix * basket[j].quantity;
+    console.log(prixPanier);
+    totalPrixPanier.push(prixPanier);
 
 }
+const reducer = (accumulator,currentValue) => accumulator + currentValue;
+const calculPrix = totalPrixPanier.reduce(reducer);
+const divTotal = document.querySelector(".total");
+divTotal.innerHTML = `<div>
+Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
+</div>`;
+
+
+
+
 let vider = document.querySelector(".supprimer");
     vider.addEventListener('click', () => {
         localStorage.removeItem("basket");
     })
+// //  let totalPanier = "" ;
+// const divTotal = document.querySelector(".totalpanier");
+// let calculPanier = basket.prix/100 * basket.quantity +".00"+ " €" ;
+// console.log(calculPanier);
+// divTotal.innerHTML = calculPanier;
 
 
     
