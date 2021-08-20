@@ -21,7 +21,6 @@ for (let i = 0; i < basket.length; i++) {
  let totalPrixPanier = [] ;
  for (let j = 0; j < basket.length; j++) {
     let prixPanier = basket[j].prix * basket[j].quantity;
-    console.log(prixPanier);
     totalPrixPanier.push(prixPanier);
 
 }
@@ -38,6 +37,7 @@ Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 let vider = document.querySelector(".supprimer");
     vider.addEventListener('click', () => {
         localStorage.removeItem("basket");
+        location.reload();
     })
 // //  let totalPanier = "" ;
 // const divTotal = document.querySelector(".totalpanier");
