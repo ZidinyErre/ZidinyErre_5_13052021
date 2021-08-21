@@ -12,9 +12,10 @@ for (let i = 0; i < basket.length; i++) {
         <td>${basket[i].name}</td>
         <td>${basket[i].prix/100+".00"+"€"}</td>
         <td>${basket[i].quantity}</td>
+        <td><button class="supp-un">Supprimer</button></td>
     </tr>
-
     `
+    
     
 }
 
@@ -31,6 +32,15 @@ divTotal.innerHTML = `<div>
 Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 </div>`;
 
+for (let l = 0; l < basket.length; l++) {
+    let buttonSupp = document.querySelector(".supp-un");
+    buttonSupp.addEventListener('click', () => {
+        basket.splice(l, 1);
+        localStorage.setItem('basket',JSON.stringify(basket));
+        location.reload();
+
+    }) 
+}
 
 
 
