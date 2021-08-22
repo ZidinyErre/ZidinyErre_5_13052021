@@ -32,6 +32,7 @@ divTotal.innerHTML = `<div>
 Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 </div>`;
 
+
 for (let l = 0; l < basket.length; l++) {
     let buttonSupp = document.querySelector(".supp-un");
     buttonSupp.addEventListener('click', () => {
@@ -49,44 +50,13 @@ let vider = document.querySelector(".supprimer");
         localStorage.removeItem("basket");
         location.reload();
     })
-// //  let totalPanier = "" ;
-// const divTotal = document.querySelector(".totalpanier");
-// let calculPanier = basket.prix/100 * basket.quantity +".00"+ " €" ;
-// console.log(calculPanier);
-// divTotal.innerHTML = calculPanier;
-
 
     
 
-// let notrePanierJSON = Object.keys(localStorage);
-// console.log(notrePanierJSON);
-// for (let i = 0; i < notrePanierJSON.length; i++) {
-//     const appareil = JSON.parse(localStorage.getItem(notrePanierJSON[i]));
-    
-//     let title = document.querySelector(".titre");
-//     title.innerHTML = appareil.name;
 
-//     let imgPhoto = document.querySelector(".img");
-//     let pic = imgPhoto.setAttribute('src',appareil.img);
-//     imgPhoto.innerHTML = pic;
-
-//     let price = document.querySelector(".prix");
-//     price.innerHTML = appareil.prix/100+".00" + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-euro" viewBox="0 0 16 16"><path d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z"/></svg>';
-
-//     let numberOf = document.querySelector(".nombre");
-//     numberOf.innerHTML = "Quantité:  "  +  appareil.quantity  + " .";
-// }
 
 // FORMULAIRE
-// class contact {
-//     constructor(firstName, lastName, address, city , email){
-//         this.firstName = firstName;
-//         this.lastName = lastName;
-//         this.address = address;
-//         this.city = city;
-//         this.email = email;
-//     }
-// }
+
 // const contact = {
 //     firstName : document.querySelector(".nom").value,
 //     lastName : document.querySelector(".prénom").value,
@@ -96,50 +66,91 @@ let vider = document.querySelector(".supprimer");
 // }
 
     
+class Visitor {
+    constructor(firstName, lastName, address, city , email){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.email = email;
+    }
+}
+
 
 let envoie = document.querySelector(".valid");
 envoie.addEventListener('click', function(){
     
-let firstName = document.querySelector(".nom").value;
-let nameRegex = /^[A-Za-z]{3,20}$/;
-    if(nameRegex.test(firstName)){        
-        console.log("ok");
-    } else{
-        console.log("ko");
+    let productArray = [];
+
+    let firstName = document.querySelector(".nom").value;
+    let nameRegex = /^[A-Za-z]{3,20}$/;
+        if(!nameRegex.test(firstName)){        
+        alert("Veuillez remplir correctement les champs.")        
+        } 
+
+    let  lastName = document.querySelector(".prénom").value;
+        if(!nameRegex.test(lastName)){        
+            alert("Veuillez remplir correctement les champs.")        
+        } 
+
+
+    let  city = document.querySelector(".ville").value;
+        if(!nameRegex.test(city)){        
+            alert("Veuillez remplir correctement les champs.")        
+        } 
+
+    let  email = document.querySelector(".mail").value;
+    let  emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+    if(!emailRegex.test(email)){        
+        alert("Veuillez remplir correctement les champs.")        
     }
 
-let  lastName = document.querySelector(".prénom").value;
-    if(nameRegex.test(lastName)){        
-        console.log("yep");
-    } else{
-        console.log("nop");
+    let addressRegex = /^[a-zA-Zà-żÀ-Ż-0-9+\s+-]+$/;
+    let address = document.querySelector(".adresse").value;
+    if(!addressRegex.test(address)){        
+        alert("Veuillez remplir correctement les champs.")        
     }
 
-
-let  city = document.querySelector(".ville").value;
-    if(nameRegex.test(city)){        
-        console.log("yes");
-    } else{
-        console.log("no");
+    let aVisitor = new Visitor(
+        document.querySelector(".nom").value,
+        document.querySelector(".prénom").value,
+        document.querySelector(".adresse").value,
+        document.querySelector(".ville").value,
+        document.querySelector(".mail").value
+        );
+    
+    let result = {
+        contact : {
+            firstName : aVisitor.firstName,
+            lastName : aVisitor.lastName,
+            address: aVisitor.address,
+            city : aVisitor.city,
+            email : aVisitor.email
+        },
+    
+        products: productArray
     }
 
-let  email = document.querySelector(".mail").value;
-let  emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-if(emailRegex.test(email)){        
-    console.log("ope");
-}else{
-    console.log("nope");
-}
+    fetch('http://localhost:3000/api/cameras/order',{
+        method:'POST',
+        headers : {
+            'Content-type': 'application/json' 
+        },
+        body : JSON.stringify(result)
+    })
 
-let addressRegex = /^[a-zA-Zà-żÀ-Ż-0-9+\s+-]+$/;
-let address = document.querySelector(".adresse").value;
-if(addressRegex.test(address)){        
-    console.log("ça marche ");
-}else{
-    console.log("nonn");
-}
-
-
+    .then(reponse => reponse.json())
+    .then(response => {
+        localStorage.clear();
+        let objetCommande = {
+            idCommande : response.orderId,
+            prixTotal : calculPrix
+        }
+        let commande = JSON.stringify(objetCommande);
+        localStorage.setItem('commande',commande);
+        window.location = 'confirm.html';
+    })
+    console.log(response);
 });
 
 
