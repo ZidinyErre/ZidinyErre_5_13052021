@@ -1,12 +1,12 @@
+// Ici j'utilise l'API Fetch pour récupérer les données dans le serveur , j'utilise then  ensuite en tant que promesse d'un succés ou d'échec de la manoeuvre.
 fetch("http://localhost:3000/api/cameras")
 .then(res => res.json())
 .then(function(value){
     displayProducts(value);    
 })
-
+// Ayant mis les données dans une constante j'utilise une boucle foreach pour les parcourires puis les affiché à l'aide d'innerHtml
 const displayProducts = (products) => {
     products.forEach(product => {
-        console.log(product);
         document.querySelector(".row").innerHTML +=
         `<div class="col-md-6 col-lg-4 justify-content-center">
             <div class="card align-self-start" style="width: 18rem;">

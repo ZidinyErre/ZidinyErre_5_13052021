@@ -1,8 +1,9 @@
+// Je récupére l'id à l'intérieur de l'url
 const url_string = window.location.href;
 const url = new URL(url_string);
 const id = url.searchParams.get("id");
 
-
+// Je rajoute l'id a l'API Fetch pour récupérer le bon produit
 fetch("http://localhost:3000/api/cameras/" + id)
 .then(res => res.json())
 .then(function(value){
@@ -10,9 +11,7 @@ fetch("http://localhost:3000/api/cameras/" + id)
 });
 
 const recover = (element) => {
-    console.log(element);
-    // carte Bootstrap
-    // let card = document.querySelector(".card");
+
     let focale = document.querySelector(".focale");
 
     // Création et mise en place du nom du produit
@@ -61,7 +60,7 @@ const recover = (element) => {
     let initialisation = parseInt(init, 10);
     let moins = document.getElementsByClassName('moins') ;
     let plus = document.getElementsByClassName('plus') ;
-// La on crée une condition sur chaque bouton plus et moins.J'ai mis un [] car sinon le boutons renvoyé null.   
+    // La on crée une condition sur chaque bouton plus et moins.J'ai mis un [] car sinon le boutons renvoyé null.   
     moins[0].addEventListener('click', function(){
         if (initialisation > 1 && initialisation <= 20 ) {
             initialisation--;
@@ -79,7 +78,7 @@ const recover = (element) => {
 
 
 
-
+// On envoie grâce l'événement du clique les données dans le panier
     document.querySelector(".btn-validation").addEventListener("click", function(){
         let select = document.querySelector(".drop");
         let choixFocales = select.selectedIndex;
@@ -113,16 +112,6 @@ const recover = (element) => {
     });
 
     
-    
-    // document.querySelector(".btn").addEventListener('click', function(){
-    //     let panier = JSON.parse(localStorage.getItem("panier"));
-    //     if (panier == null) {
-    //         panier = [];
-    //     }
-    //     panier.push(element._id);
-    //     localStorage.setItem("panier", JSON.stringify(panier));
-
-    // });
 }
 
 

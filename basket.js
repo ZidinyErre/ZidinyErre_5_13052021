@@ -2,9 +2,8 @@ let basket = [];
 if ( !(typeof localStorage.getItem("basket") == 'string' && !localStorage.getItem("basket").trim() || typeof localStorage.getItem("basket") == 'undefined' || localStorage.getItem("basket") === null)) {
     basket = JSON.parse(localStorage.getItem("basket"));
 }
+// j'utilise une boucle for pour les parcourires les données du panier  puis les affiché à l'aide d'innerHtml
 for (let i = 0; i < basket.length; i++) {
-
-    
 
     document.querySelector(".base_basket").innerHTML +=
    ` <tr>
@@ -18,13 +17,15 @@ for (let i = 0; i < basket.length; i++) {
     
     
 }
-
+// Ici je calcul le panier total et comme le nombre de produit varie j'utilise une boucle for
+// Prix multiplier par quantité
  let totalPrixPanier = [] ;
  for (let j = 0; j < basket.length; j++) {
     let prixPanier = basket[j].prix * basket[j].quantity;
     totalPrixPanier.push(prixPanier);
 
 }
+// Somme de tout le panier
 const reducer = (accumulator,currentValue) => accumulator + currentValue;
 const calculPrix = totalPrixPanier.reduce(reducer);
 const divTotal = document.querySelector(".total");
@@ -32,7 +33,7 @@ divTotal.innerHTML = `<div>
 Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 </div>`;
 
-
+// Suppression unique
 for (let l = 0; l < basket.length; l++) {
     let buttonSupp = document.querySelector(".supp-un");
     buttonSupp.addEventListener('click', () => {
@@ -44,7 +45,7 @@ for (let l = 0; l < basket.length; l++) {
 }
 
 
-
+// Vider le panier
 let vider = document.querySelector(".supprimer");
     vider.addEventListener('click', () => {
         localStorage.removeItem("basket");
@@ -57,13 +58,6 @@ let vider = document.querySelector(".supprimer");
 
 // FORMULAIRE
 
-// const contact = {
-//     firstName : document.querySelector(".nom").value,
-//     lastName : document.querySelector(".prénom").value,
-//     address: document.querySelector(".adresse").value,
-//     city : document.querySelector(".ville").value,
-//     email : document.querySelector(".mail").value
-// }
 
     
 class Visitor {

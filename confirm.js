@@ -1,8 +1,10 @@
+// Avec la méthode Object.keys on me renvoie ic un tableau du localstorage
 let commandeFinale = Object.keys(localStorage);
 
 let divCentrale = document.querySelector(".centre");
-
+// Je parcours à l'aide d'une boucle le tableau
 for (let c = 0; c < commandeFinale.length ; c++) {
+// Puis je vais parse les éléments car ils étaient sous forme de string donc inutilisable
     let recap = JSON.parse(localStorage.getItem(commandeFinale[c]));
 
     let merci = document.createElement("h2");
