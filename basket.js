@@ -35,24 +35,34 @@ Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 
 // Suppression unique
 
+console.log(basket);
+
+
 let idBasket = [];
 for (let l = 0; l < basket.length; l++) {
     idBasket.push(basket.id);
-}
-console.log(basket.length);
-function suppCamera(id){
-    let camera = basket[id];
-    if (camera > 1) {
-        camera--;
-    }else{
-       basket.splice(id, 1);
-    }
-    localStorage.setItem('basket',JSON.stringify(basket));
-    location.reload();
-}
 
+}
+const index = idBasket[0].indexOf(0);
 let buttonSupp = document.querySelector(".supp-un");
-    buttonSupp.addEventListener('click', () => suppCamera(buttonSupp.dataset.id) );
+buttonSupp.addEventListener('click', () => {
+    if (index > -1) {
+    idBasket[0].splice(index, 1);
+    }
+});
+
+// function suppCamera(id){
+//     let camera = basket[id];
+//     if (camera > 1) {
+//         camera--;
+//     }else{
+//        basket.splice(id, 1);
+//     }
+//     localStorage.setItem('basket',JSON.stringify(basket));
+//     location.reload();
+// }
+
+
 
 // for (let l = 0; l < basket.length; l++) {
 //     let buttonSupp = document.querySelector(".supp-un");
