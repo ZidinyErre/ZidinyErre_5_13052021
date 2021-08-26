@@ -35,21 +35,21 @@ Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 
 // Suppression unique
 
-console.log(basket);
 
-
-let idBasket = [];
-for (let l = 0; l < basket.length; l++) {
-    idBasket.push(basket.id);
-
-}
-const index = idBasket[0].indexOf(0);
 let buttonSupp = document.querySelector(".supp-un");
-buttonSupp.addEventListener('click', () => {
-    if (index > -1) {
-    idBasket[0].splice(index, 1);
-    }
-});
+for (let l = 0; l < buttonSupp.length; l++) {
+    buttonSupp[l].addEventListener('click', () => {
+
+        let idBasket  = basket.id;
+        let idSelection = basket[l].idBasket;
+        console.log(idSelection);
+
+       basket = basket.filter(el => el.idBasket !== idSelection);
+    });
+    
+}
+
+
 
 // function suppCamera(id){
 //     let camera = basket[id];
