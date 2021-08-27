@@ -44,13 +44,12 @@
         
         </tbody>
       </table>
-      <div class="col-4">
-        <button class="supprimer">Vider le panier</button>
+      <div class="col totaux d-flex  justify-content-center">
+        <button type="button" class="btn btn-danger supprimer">Vider le panier</button>
+        <div class="total"></div>
       </div>
-      <div class="total">
-
-      </div>
-      <form >
+      
+      <form class="row ">
 
         <!-- <div class="col data d-flex  justify-content-start">
           <div class="titre"></div>
@@ -59,22 +58,27 @@
           <div class="nombre"></div>
         </div> -->
 
-        <div class="col-4  formulaire">
-          <input type="text" class="form-control nom" placeholder="Nom de famille">
+        <div class="col-4  formulaire align-self-start">
+          <label for="nom">Nom:</label>
+          <input type="text" class="form-control nom" id="nom" >
         </div>
-        <div class="col-4  formulaire">
-          <input type="text" class="form-control prénom" placeholder="Prénom">
+        <div class="col-4  formulaire align-self-start">
+          <label for="prénom">Prénom:</label>
+          <input type="text" class="form-control prénom" id="prénom">
         </div>
-        <div class="col-4  formulaire">
-          <input type="text" class="form-control mail" placeholder="Mail">
+        <div class="col-4  formulaire align-self-center">
+          <label for="Mail">Email:</label>
+          <input type="text" class="form-control mail" id="Mail">
         </div>
-        <div class="col-4  formulaire">
-          <input type="text" class="form-control ville" placeholder="Ville">
+        <div class="col-4  formulaire align-self-center">
+          <label for="Ville">Ville:</label>
+          <input type="text" class="form-control ville" id="Ville">
         </div>
-        <div class="col-4  formulairebas">
-          <input type="text" class="form-control adresse" placeholder="Adresse">
+        <div class="col-4  formulairebas align-self-end">
+          <label for="Adresse">Adresse:</label>
+          <input type="text" class="form-control adresse" id="Adresse">
         </div>
-        <button type="button" class="btn btn-dark valid col-3  d-flex justify-content-center mx-auto ">Let's Go</button>
+        <button type="button" class="btn btn-dark valid col-3  d-flex justify-content-center mx-auto ">Valider</button>
       </form>
     </div>
     <footer class="row">

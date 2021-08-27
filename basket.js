@@ -29,8 +29,8 @@ for (let i = 0; i < basket.length; i++) {
 const reducer = (accumulator,currentValue) => accumulator + currentValue;
 const calculPrix = totalPrixPanier.reduce(reducer);
 const divTotal = document.querySelector(".total");
-divTotal.innerHTML = `<div>
-Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
+divTotal.innerHTML = ` <div>
+Total : <span>${calculPrix/100 + " .00" + "€"}</span>
 </div>`;
 
 // Suppression unique

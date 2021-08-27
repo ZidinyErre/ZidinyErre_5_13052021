@@ -13,17 +13,35 @@ header nav{
     width: 5rem;
 
 }
+.total{
+    margin-left: 2%;
+
+}
+.totaux{
+    margin-bottom: 1rem;
+}
+.total span {
+    font-weight: bold;
+}
 form{
-    background-color: coral;
-    border-radius: 5%;
+    margin-bottom: 1rem;
+    background: linear-gradient(to bottom,white,30%, pink);
+    display: flex;
+    align-items: center;
+    padding: auto;
+
 }
 .formulaire{
     margin-left: 2rem;
     margin-bottom: 1rem;
+    padding: 0;
+
 }
 .formulairebas{
     margin-left: 2rem;
     margin-bottom: 4rem;
+    padding: 0;
+
 
 }
 
