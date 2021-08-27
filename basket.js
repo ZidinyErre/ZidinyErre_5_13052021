@@ -11,7 +11,7 @@ for (let i = 0; i < basket.length; i++) {
         <td>${basket[i].name}</td>
         <td>${basket[i].prix/100+".00"+"€"}</td>
         <td>${basket[i].quantity}</td>
-        <td><button class="supp-un">Supprimer</button></td>
+        <td><button onclick= removeItem("${basket[i].id}") class="supp-un">Supprimer</button></td>
     </tr>
     `
     
@@ -36,18 +36,43 @@ Le Prix de vos achats est de ${calculPrix/100 + " .00" + "€"}
 // Suppression unique
 
 
-let buttonSupp = document.querySelector(".supp-un");
-for (let l = 0; l < buttonSupp.length; l++) {
-    buttonSupp[l].addEventListener('click', () => {
+let buttonSupp = document.querySelectorAll(".supp-un");
 
-        let idBasket  = basket.id;
-        let idSelection = basket[l].idBasket;
-        console.log(idSelection);
+console.log(basket);
+const removeItem = idToRemove => {
+    basket = basket.filter(basket  => basket[0].id !== idToRemove)
+    localStorage.setItem('basket',JSON.stringify(basket));
+};
+localStorage.setItem('basket',JSON.stringify(basket));
 
-       basket = basket.filter(el => el.idBasket !== idSelection);
-    });
+// basket.forEach(object => {
+//    buttonSupp.addEventListener('click', () => {
+//         if (basket[object].index > -1) {
+//                     object--;
+//                 }else{
+//                 basket.splice(object, 1);
+//                 }
+//                 localStorage.setItem('basket',JSON.stringify(basket));
+//         }
+//     )
+
+// });
+// localStorage.setItem("basket", JSON.stringify(basket));
     
-}
+
+// for (let l = 0; l < buttonSupp.length; l++) {
+//     buttonSupp[l].addEventListener('click', () => {
+
+//         let idBasket  = basket.id;
+//         let idSelection = basket[l].idBasket;
+//         console.log(idSelection);
+
+//        basket = basket.filter(el => el.idBasket !== idSelection);
+
+//     });
+//     localStorage.setItem("basket", JSON.stringify(basket));
+
+// }
 
 
 

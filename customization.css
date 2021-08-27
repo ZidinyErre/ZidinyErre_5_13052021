@@ -1,5 +1,5 @@
 header nav{
-    background-color: pink;
+    background: linear-gradient(to bottom,purple,30%, pink);
     margin-bottom: 3rem;
 
 }
@@ -34,7 +34,7 @@ button{
     margin-bottom: 0.5rem;
 }
 footer{
-    background-color: rgb(255,192,203);
+    background: linear-gradient(to top,purple,30%, pink);
     width: auto;
     height: 4rem;
 }
