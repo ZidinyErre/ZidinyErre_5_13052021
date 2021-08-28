@@ -1,4 +1,8 @@
 .centre{
     background: linear-gradient(to bottom,purple,30%, pink);
+    
 
+}
+span{
+    font-weight: bold;
 }

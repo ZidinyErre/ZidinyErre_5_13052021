@@ -6,7 +6,7 @@ if ( !(typeof localStorage.getItem("basket") == 'string' && !localStorage.getIte
 for (let i = 0; i < basket.length; i++) {
 
     document.querySelector(".base_basket").innerHTML +=
-   ` <tr>
+   ` <tr class="col-sm-8">
         <td class="imgtableau2"><img class="imgtableau" src='  ${basket[i].img}  '></td>
         <td>${basket[i].name}</td>
         <td>${basket[i].prix/100+".00"+"€"}</td>
