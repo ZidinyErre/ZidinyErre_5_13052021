@@ -11,7 +11,7 @@ for (let i = 0; i < basket.length; i++) {
         <td>${basket[i].name}</td>
         <td>${basket[i].prix/100+".00"+"€"}</td>
         <td>${basket[i].quantity}</td>
-        <td><button data-id="${i}" class="supp-un">Supprimer</button></td>
+        <td><button data-id="${i}" class="supp-un btn btn-outline-danger">Supprimer</button></td>
     </tr>
     `
     
