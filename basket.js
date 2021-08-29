@@ -11,12 +11,13 @@ for (let i = 0; i < basket.length; i++) {
         <td>${basket[i].name}</td>
         <td>${basket[i].prix/100+".00"+"€"}</td>
         <td>${basket[i].quantity}</td>
-        <td><button onclick= removeItem("${basket[i].id}") class="supp-un">Supprimer</button></td>
+        <td><button data-id="${i}" class="supp-un">Supprimer</button></td>
     </tr>
     `
     
     
 }
+
 // Ici je calcul le panier total et comme le nombre de produit varie j'utilise une boucle for
 // Prix multiplier par quantité
  let totalPrixPanier = [] ;
@@ -37,13 +38,27 @@ Total : <span>${calculPrix/100 + " .00" + "€"}</span>
 
 
 let buttonSupp = document.querySelectorAll(".supp-un");
+let element = document.querySelectorAll('.supp-un[data-id="${i}"]');
+console.log(element);
+// buttonSupp.addEventListener('click', function(){
 
-console.log(basket);
-const removeItem = idToRemove => {
-    basket = basket.filter(basket  => basket[0].id !== idToRemove)
-    localStorage.setItem('basket',JSON.stringify(basket));
-};
-localStorage.setItem('basket',JSON.stringify(basket));
+// })
+// let removeIndex = basket.map(item => item.id).indexOf(basket.dataset-id);
+
+// function removeItem(id){
+//     let arrId = [];
+//     basket.forEach(element => {
+//         arrId.push(element.id);
+//     });
+//     if (arrId[id] == id){
+//         delete basket.indexOf(id);
+//     }else{
+//         return false;
+//     }
+//     localStorage.setItem('basket',JSON.stringify(basket));
+
+// }
+
 
 // basket.forEach(object => {
 //    buttonSupp.addEventListener('click', () => {
