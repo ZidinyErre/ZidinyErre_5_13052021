@@ -36,13 +36,44 @@ Total : <span>${calculPrix/100 + " .00" + "€"}</span>
 
 // Suppression unique
 
-
 let buttonSupp = document.querySelectorAll(".supp-un");
-let element = document.querySelectorAll('.supp-un[data-id="${i}"]');
-console.log(element);
-// buttonSupp.addEventListener('click', function(){
+console.log(buttonSupp);
 
+for (let e = 0; e < buttonSupp.length; e++) {
+    buttonSupp[e].addEventListener('click', (event) => {
+        event.preventDefault();
+        
+    })    
+}
+
+// let idBasket = basket.map(el => el.id);
+// let buttonSupp = document.getElementsByClassName("supp-un");
+// for (let j = 0; j < basket.length; j++) {
+//     buttonSupp[j].addEventListener('click', () => {
+//         console.log("yes");
+//             basket.pop();
+//     })
+// }
+
+
+// let lookup = {};
+// for (let t = 0, len = basket.length; t < len; t++) {
+//     lookup[basket[t].id] = basket[t];
+// }
+
+// localStorage.removeItem(basketArr);
+    // location.reload();
+// const sweetArray = [2, 3, 4, 5, 35]
+// const sweeterArray = sweetArray.map(sweetItem => {
+//     return sweetItem * 2
 // })
+
+// // let element = document.querySelectorAll('.supp-un[data-id="${i}"]');
+// // let data = buttonSupp.getItem;
+// buttonSupp.addEventListener('click', function(){
+//     alert("coucou");
+//     // alert(data);
+// });
 // let removeIndex = basket.map(item => item.id).indexOf(basket.dataset-id);
 
 // function removeItem(id){
@@ -121,9 +152,6 @@ let vider = document.querySelector(".supprimer");
         localStorage.removeItem("basket");
         location.reload();
     })
-
-    
-
 
 
 // FORMULAIRE
