@@ -37,14 +37,49 @@ Total : <span>${calculPrix/100 + " .00" + "€"}</span>
 // Suppression unique
 
 let buttonSupp = document.querySelectorAll(".supp-un");
-console.log(buttonSupp);
+// let buttonSupp = document.querySelector(".supp-un");
+
+
 
 for (let e = 0; e < buttonSupp.length; e++) {
     buttonSupp[e].addEventListener('click', (event) => {
         event.preventDefault();
-        
+        console.log("yes");
+        const index = basket.indexOf(event);
+
+        basket.splice(index, 1);
+        localStorage.setItem('basket',JSON.stringify(basket));
+        location.reload();
     })    
 }
+
+
+// function removeIndex (arr, index){
+//     arr.splice(index, 1);
+
+//     return arr
+// }
+
+// let  baskets = basket.from(buttonSupp.children);
+// buttonSupp.addEventListener('click', (event) => {
+//     if (event.target.classList.contains("delete") ) {
+//         const targetTr = event.target.parentElement.parentElement;
+//         const index = basket.indexOf(targetTr);
+
+//         if (basketArr === 1) {
+//             localStorage.removeItem("basket");
+//             window.location.reload();
+//         } else {
+//             basket.splice(index, 1);
+//             localStorage.setItem("basket", JSON.stringify(basket));
+//             window.location.reload();
+
+//         }
+        
+//     }
+// })
+
+
 
 // let idBasket = basket.map(el => el.id);
 // let buttonSupp = document.getElementsByClassName("supp-un");
