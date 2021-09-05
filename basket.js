@@ -37,9 +37,6 @@ Total : <span>${calculPrix/100 + " .00" + "€"}</span>
 // Suppression unique
 
 let buttonSupp = document.querySelectorAll(".supp-un");
-// let buttonSupp = document.querySelector(".supp-un");
-
-
 
 for (let e = 0; e < buttonSupp.length; e++) {
     buttonSupp[e].addEventListener('click', (event) => {
@@ -53,132 +50,6 @@ for (let e = 0; e < buttonSupp.length; e++) {
     })    
 }
 
-
-// function removeIndex (arr, index){
-//     arr.splice(index, 1);
-
-//     return arr
-// }
-
-// let  baskets = basket.from(buttonSupp.children);
-// buttonSupp.addEventListener('click', (event) => {
-//     if (event.target.classList.contains("delete") ) {
-//         const targetTr = event.target.parentElement.parentElement;
-//         const index = basket.indexOf(targetTr);
-
-//         if (basketArr === 1) {
-//             localStorage.removeItem("basket");
-//             window.location.reload();
-//         } else {
-//             basket.splice(index, 1);
-//             localStorage.setItem("basket", JSON.stringify(basket));
-//             window.location.reload();
-
-//         }
-        
-//     }
-// })
-
-
-
-// let idBasket = basket.map(el => el.id);
-// let buttonSupp = document.getElementsByClassName("supp-un");
-// for (let j = 0; j < basket.length; j++) {
-//     buttonSupp[j].addEventListener('click', () => {
-//         console.log("yes");
-//             basket.pop();
-//     })
-// }
-
-
-// let lookup = {};
-// for (let t = 0, len = basket.length; t < len; t++) {
-//     lookup[basket[t].id] = basket[t];
-// }
-
-// localStorage.removeItem(basketArr);
-    // location.reload();
-// const sweetArray = [2, 3, 4, 5, 35]
-// const sweeterArray = sweetArray.map(sweetItem => {
-//     return sweetItem * 2
-// })
-
-// // let element = document.querySelectorAll('.supp-un[data-id="${i}"]');
-// // let data = buttonSupp.getItem;
-// buttonSupp.addEventListener('click', function(){
-//     alert("coucou");
-//     // alert(data);
-// });
-// let removeIndex = basket.map(item => item.id).indexOf(basket.dataset-id);
-
-// function removeItem(id){
-//     let arrId = [];
-//     basket.forEach(element => {
-//         arrId.push(element.id);
-//     });
-//     if (arrId[id] == id){
-//         delete basket.indexOf(id);
-//     }else{
-//         return false;
-//     }
-//     localStorage.setItem('basket',JSON.stringify(basket));
-
-// }
-
-
-// basket.forEach(object => {
-//    buttonSupp.addEventListener('click', () => {
-//         if (basket[object].index > -1) {
-//                     object--;
-//                 }else{
-//                 basket.splice(object, 1);
-//                 }
-//                 localStorage.setItem('basket',JSON.stringify(basket));
-//         }
-//     )
-
-// });
-// localStorage.setItem("basket", JSON.stringify(basket));
-    
-
-// for (let l = 0; l < buttonSupp.length; l++) {
-//     buttonSupp[l].addEventListener('click', () => {
-
-//         let idBasket  = basket.id;
-//         let idSelection = basket[l].idBasket;
-//         console.log(idSelection);
-
-//        basket = basket.filter(el => el.idBasket !== idSelection);
-
-//     });
-//     localStorage.setItem("basket", JSON.stringify(basket));
-
-// }
-
-
-
-// function suppCamera(id){
-//     let camera = basket[id];
-//     if (camera > 1) {
-//         camera--;
-//     }else{
-//        basket.splice(id, 1);
-//     }
-//     localStorage.setItem('basket',JSON.stringify(basket));
-//     location.reload();
-// }
-
-
-
-// for (let l = 0; l < basket.length; l++) {
-//     let buttonSupp = document.querySelector(".supp-un");
-//     buttonSupp.addEventListener('click', () => {
-//         basket.splice(l, 1);
-//         localStorage.setItem('basket',JSON.stringify(basket));
-//         location.reload();
-
-//     }) 
-// }
 
 
 // Vider le panier
@@ -212,30 +83,39 @@ envoie.addEventListener('click', function(){
     let firstName = document.querySelector(".nom").value;
     let nameRegex = /^[A-Za-z]{3,20}$/;
         if(!nameRegex.test(firstName)){        
-        alert("Veuillez remplir correctement les champs.")        
+        alert("Veuillez remplir correctement les champs.")
+        window.location = 'basket.html';        
         } 
 
     let  lastName = document.querySelector(".prénom").value;
         if(!nameRegex.test(lastName)){        
-            alert("Veuillez remplir correctement les champs.")        
+            alert("Veuillez remplir correctement les champs.")
+            window.location = 'basket.html';        
+        
         } 
 
 
     let  city = document.querySelector(".ville").value;
         if(!nameRegex.test(city)){        
-            alert("Veuillez remplir correctement les champs.")        
+            alert("Veuillez remplir correctement les champs.")
+            window.location = 'basket.html';        
+        
         } 
 
     let  email = document.querySelector(".mail").value;
     let  emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
     if(!emailRegex.test(email)){        
-        alert("Veuillez remplir correctement les champs.")        
+        alert("Veuillez remplir correctement les champs.") 
+        window.location = 'basket.html';        
+       
     }
 
     let addressRegex = /^[a-zA-Zà-żÀ-Ż-0-9+\s+-]+$/;
     let address = document.querySelector(".adresse").value;
     if(!addressRegex.test(address)){        
-        alert("Veuillez remplir correctement les champs.")        
+        alert("Veuillez remplir correctement les champs.")  
+        window.location = 'basket.html';        
+      
     }
 
     let aVisitor = new Visitor(
@@ -277,7 +157,6 @@ envoie.addEventListener('click', function(){
         localStorage.setItem('commande',commande);
         window.location = 'confirm.html';
     })
-    console.log(response);
 });
 
 
