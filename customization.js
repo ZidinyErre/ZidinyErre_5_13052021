@@ -74,11 +74,11 @@ const recover = (element) => {
             document.querySelector(".form-control").value = initialisation;
         }
     });
-//Dans les deux conditions if précèdentes on rajoute à la variable initialisation les valeurs de l'input
+    //Dans les deux conditions if précèdentes on rajoute à la variable initialisation les valeurs de l'input
 
 
 
-// On envoie grâce l'événement du clique les données dans le panier
+    // On envoie grâce l'événement du clique les données dans le panier
     document.querySelector(".btn-validation").addEventListener("click", function(){
         let select = document.querySelector(".drop");
         let choixFocales = select.selectedIndex;

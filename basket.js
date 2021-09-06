@@ -41,7 +41,6 @@ let buttonSupp = document.querySelectorAll(".supp-un");
 for (let e = 0; e < buttonSupp.length; e++) {
     buttonSupp[e].addEventListener('click', (event) => {
         event.preventDefault();
-        console.log("yes");
         const index = basket.indexOf(event);
 
         basket.splice(index, 1);
